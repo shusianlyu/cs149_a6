@@ -1,0 +1,538 @@
+a4.txt
+Script started on 2022-10-19 16:12:54-04:00
+--------------------------------------------------------
+0)
+bash-4.4$ fgrep "type=retweeted" downloaded_tweets_extend_nolf2.tsv | awk 'BEGIN  { FS = "\t" } ; { print $5 }' > retweet_ids.txt [C[C[C[C[C[K[K[K[Kcvs[C[C[K[Ksv
+bash-4.4$ vi +6265 retweet_ids.csv
+[?2004h[?1049h[22;0;0t[?1h=[?2004h[1;24r[?12h[?12l[27m[23m[29m[m[H[2J[?25l[24;1H"retweet_ids.csv" 48954L, 2790301C[1;1H[<ReferencedTweet id=1518475799313240064 type=retweeted]
+[<ReferencedTweet id=1518518497512415234 type=retweeted]
+[<ReferencedTweet id=1518286158664540161 type=retweeted]
+[<ReferencedTweet id=1518221105571540992 type=retweeted]
+[<ReferencedTweet id=1518246547267497987 type=retweeted]
+[<ReferencedTweet id=1517990806820470784 type=retweeted]
+[<ReferencedTweet id=1518238954079858689 type=retweeted]
+[<ReferencedTweet id=1517799924527767553 type=retweeted]
+[<ReferencedTweet id=1517946878763180035 type=retweeted]
+[<ReferencedTweet id=1517947262118371329 type=retweeted]
+[<ReferencedTweet id=1517942129372237824 type=retweeted]
+
+[<ReferencedTweet id=1517901419302600712 type=retweeted]
+[<ReferencedTweet id=1517901416286900224 type=retweeted]
+[<ReferencedTweet id=1517901408531529730 type=retweeted]
+[<ReferencedTweet id=1517837676296220673 type=retweeted]
+[<ReferencedTweet id=1517610910944276481 type=retweeted]
+[<ReferencedTweet id=1517803702681223168 type=retweeted]
+[<ReferencedTweet id=1517783054969880576 type=retweeted]
+[<ReferencedTweet id=1517757460232163329 type=retweeted]
+[<ReferencedTweet id=1517603766756859904 type=retweeted]
+[<ReferencedTweet id=1517530248434266112 type=retweeted]
+[<ReferencedTweet id=1517534133622349825 type=retweeted][12;1H[?25h[?25l[24;1H[1m-- INSERT --[m[24;13H[K[12;1H[?25h[?25l[11;23r[23;1H
+[1;24r[11;1H[<ReferencedTweet id=1517942129372237824 type=retweeted][23;1H[<ReferencedTweet id=1517495253154078721 type=retweeted][11;57H[?25h[24;1H[K[11;56H[?25l[?25h[?25l[24;1H:[?2004h[?25hx[?25l[?2004l"retweet_ids.csv" 48953L, 2790300C written
+[?2004l[?1l>[?25h[?1049l[23;0;0tbash-4.4$ head retweet_o[Kids.csv
+[<ReferencedTweet id=1513654494504136709 type=retweeted]
+[<ReferencedTweet id=1513774168348704770 type=retweeted]
+[<ReferencedTweet id=1519864927997075458 type=retweeted]
+[<ReferencedTweet id=1519742972186800130 type=retweeted]
+[<ReferencedTweet id=1519666326419218432 type=retweeted]
+[<ReferencedTweet id=1519450979204276227 type=retweeted]
+[<ReferencedTweet id=1519075500588687361 type=retweeted]
+[<ReferencedTweet id=1518733566590394368 type=retweeted]
+[<ReferencedTweet id=1518538452240900096 type=retweeted]
+[<ReferencedTweet id=1517876638461038592 type=retweeted]
+bash-4.4$ awk 'BEGIN { FS = " " } ; { print $2 }' retweet_ids.csv | awk 'BEGIN {  FS = "=" } ; { print $2"\t" }' > retweet_ids1.csv
+bash-4.4$ heawd [K[K[K[Ke[Kad retweet_ids1.csv
+1513654494504136709	
+1513774168348704770	
+1519864927997075458	
+1519742972186800130	
+1519666326419218432	
+1519450979204276227	
+1519075500588687361	
+1518733566590394368	
+1518538452240900096	
+1517876638461038592	
+bash-4.4$ fgrep -f retweet_ids1.txt downloaded_tweets_extend_original_nolf2.tsv || awk 'BEGIN { FS = "\t" } ; { print $2 }' | sort | uniq -c | awk '{ print $1, $22}' | sort -g  | tail -n 10[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C downloaded_tweets_extend_original_nolf2.tsv | awk 'BEGIN { FS = "\t" } ; { print $2 }' | sort | uniq -c | awk '{ print $1, $2}[1P[A[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C downloaded_tweets_extend_original_nolf2.tsv | awk 'BEGIN { FS = "\t" } ; { print $2 }' | sort | uniq -c | awk '{ print $1, $2}'[1P[A[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C downloaded_tweets_extend_original_nolf2.tsv | awk 'BEGIN { FS = "\t" } ; { print $2 }' | sort | uniq -c | awk '{ print $1, $2}' [1P[A[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cc downloaded_tweets_extend_original_nolf2.tsv | awk 'BEGIN { FS = "\t" } ; { print $2 }' | sort | uniq -c | awk '{ print $1, $2}'[1@ [A[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cs downloaded_tweets_extend_original_nolf2.tsv | awk 'BEGIN { FS = "\t" } ; { print $2 }' | sort | uniq -c | awk '{ print $1, $2}[1@'[A[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cv downloaded_tweets_extend_original_nolf2.tsv | awk 'BEGIN { FS = "\t" } ; { print $2 }' | sort | uniq -c | awk '{ print $1, $2[1@}[A[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+
+
+158 813314931147816960
+178 380648579
+179 1229752606714728454
+189 42836999
+250 1219232377605644289
+254 1231514832479948802
+274 1495480590572961792
+275 163018653
+387 1891490382
+526 18831926
+bash-4.4$ fgrep -f retweet_ids1.csv downloaded_tweets_extend_original_nolf2.tsv || awk 'BEGIN { FS = "\t" } ; { print $2 }' | sort | uniq -c | awk '{ print $1, $22}' | sort -g  | tail -n 10 > q0.csv
+bash-4.4$ vu[Ki q0.csv
+[?2004h[?1049h[22;0;0t[?1h=[?2004h[1;24r[?12h[?12l[27m[23m[29m[m[H[2J[?25l[24;1H"q0.csv" 10L, 188C[1;1H158 813314931147816960
+178 380648579
+179 1229752606714728454
+189 42836999
+250 1219232377605644289
+254 1231514832479948802
+274 1495480590572961792
+275 163018653
+387 1891490382
+526 18831926
+[94m~                                                                               [12;1H~                                                                               [13;1H~                                                                               [14;1H~                                                                               [15;1H~                                                                               [16;1H~                                                                               [17;1H~                                                                               [18;1H~                                                                               [19;1H~                                                                               [20;1H~                                                                               [21;1H~                                                                               [22;1H~                                                                               [23;1H~                                                                               [1;1H[?25h[?25l[m[24;1H[1m-- INSERT --[m[24;13H[K[1;1H[?25h[?25l[2;23r[2;1H[L[1;24r[1;1H[K[2;1H158 813314931147816960[?25h[1;1H[?25lc[?25h[?25lo[?25h[?25lu[?25h[?25ln[?25h[?25lt[?25h[?25ls[?25h[?25l [?25h[?25la[?25h[?25lu[?25h[?25lt[?25h[?25lh[?25h[?25l[1;11H[K[1;11H[?25h[?25l[1;10H[K[1;10H[?25h[?25l[1;9H[K[1;9H[?25h[?25l[1;8H[K[1;8H[?25h[?25lu[?25h[?25ls[?25h[?25le[?25h[?25lr[?25h[?25l)[?25h[?25l[1;12H[K[1;12H[?25h[?25l+[?25h[?25li[?25h[?25ld[?25h[?25l[1;14H[K[1;14H[?25h[?25l[1;12H[K[1;12H[?25h[?25l_[?25h[?25li[?25h[?25ld[?25hid[24;1H[K[1;14H[?25l[?25h[?25l[24;1H:[?2004h[?25hx[?25l[?2004l"q0.csv" 11L, 203C written
+--------------------------------------------------------
+1)
+[?2004l[?1l>[?25h[?1049l[23;0;0tbash-4.4$ fgrep "type=retweeted" downloaded_tweets_extend_nolf2.tsv | awk 'BEGIN  { FS = "\t" } ; { print $2, $5 }' | awk '{print $1, $3}' > unmodified_ids.csv
+bash-4.4$ head unmodified_ids.csv
+308045021 id=1513654494504136709
+308045021 id=1513774168348704770
+308045021 id=1519864927997075458
+308045021 id=1519742972186800130
+308045021 id=1519666326419218432
+308045021 id=1519450979204276227
+308045021 id=1519075500588687361
+308045021 id=1518733566590394368
+308045021 id=1518538452240900096
+308045021 id=1517876638461038592
+bash-4.4$ awk '{print $1}' unmodified_ids.csv > author_ids.csv
+bash-4.4$ awk 'BEGIN { FS = "=" } ; {print $2}' unmodified_ids.csv > IDs.csv
+bash-4.4$ paste author_ids.csv IDs.csv > authors_and_IDs.csv
+bash-4.4$ awk 'BEGIN { FS = "\t" } ; { print $2"\t"$1 }' downloaded_tweets_extendd_original_nolf2.tsv > users_and_IDs.csv
+bash-4.4$ join -1 2 -2 2 <(sort -k 2 users_and_IDs.csv) <(sort -k 2 authors_and_IIDs.csv) | awk ' {print $2, $3} ' | sort -g > q1
+bash-4.4$ awk ' {if ($1 != $2) { print " "$1","$2}} ' q1[C[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kjoin -1 2 -2 2 <(sort -k 2 users_and_IDs.csv) <(sort -k 2 authors_and_IIDs.csv) | awk ' {print $2, $3} ' | sort -g > q1[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kls
+a4.txt					     IDs.csv
+amazon_reviews_us_Books_v1_02.tsv	     q0.csv
+author_ids.csv				     q1
+authors_and_IDs.csv			     retweet_ids1.csv
+downloaded_tweets_extend_nolf2.tsv	     retweet_ids.csv
+downloaded_tweets_extend_original_nolf2.tsv  unmodified_ids.csv
+gnuplot-5.4.5				     users_and_IDs.csv
+bash-4.4$ awk ' {if ($1 != $2) { print " "$1","$2}} ' q1 > q1.txt[K[K[Kcsv
+--------------------------------------------------------
+2)
+bash-4.4$ fgrep -f retweet_ids1.csv downloaded_tweets_extend_original_nolf2.tsv || awk 'BEGIN { FS = "\t" } ; { print $2 }' | sort | uniq -c | awk '{ print $1, $22}' | sort -g  | awk '{if ($1 >= 3) { print " "$2","} }'> more_than_three.txt[K[K[Kcsv
+bash-4.4$ fgrep -f more_than_three.csv q1.csv > q2.csv
+--------------------------------------------------------
+3)
+bash-4.4$ wk 'BEGIN {FS = ","}; {print $1}' q2.csv | uniq -c | sort -k 1n | awk ''{print $1}' | uniq -c | awk '{print $1,"size"$2}' > plot.csv[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cawk 'BEGIN {FS = ","}; {print $1}' q2.csv | uniq -c | sort -k 1n | awk [1@'[A[C[C[C[C[C[C[C[C[C
+
+bash-4.4$ cd gnuplot-5.4.5
+bash-4.4$ cd src
+bash-4.4$ ./gnuplot
+
+	G N U P L O T
+	Version 5.4 patchlevel 5    last modified 2022-09-28 
+
+	Copyright (C) 1986-1993, 1998, 2004, 2007-2022
+	Thomas Williams, Colin Kelley and many others
+
+	gnuplot home:     http://www.gnuplot.info
+	faq, bugs, etc:   type "help FAQ"
+	immediate help:   type "help"  (plot window: hit 'h')
+
+Terminal type is now 'unknown'
+gnuplot> set terminal svg size 1200, 700
+
+Terminal type is now 'svg'
+Options are 'size 1200,700 fixed enhanced font 'Arial,12' butt dashlength 1.0 '
+gnuplot> set output 'a4_cluster.png' 
+gnuplot> set style data histogram
+gnuplot> set xtics rotate
+gnuplot> plot '/home/jessie/plot.csv’ using 1:xtic(2) title 'Values by sizes'
+         warning: Cannot find or open file "/home/jessie/plot.csv’ using 1:xtic(2) title "
+         No data in plot
+
+gnuplot> exit
+bash-4.4$ ls
+a4_cluster.png	  encoding.o	history.c	  parse.o     stdfn.o
+alloc.c		  eval.c	history.o	  plot2d.c    strftime.c
+alloc.h		  eval.h	internal.c	  plot2d.h    syscfg.h
+alloc.o		  eval.o	internal.h	  plot2d.o    tables.c
+axis.c		  external.c	internal.o	  plot3d.c    tables.h
+axis.h		  external.h	interpol.c	  plot3d.h    tables.o
+axis.o		  external.o	interpol.h	  plot3d.o    tabulate.c
+beos		  fit.c		interpol.o	  plot.c      tabulate.h
+bf_test		  fit.h		jitter.c	  plot.h      tabulate.o
+bf_test.c	  fit.o		jitter.h	  plot.o      term_api.h
+bf_test.o	  for_hash.csv	jitter.o	  pm3d.c      term.c
+bitmap.c	  gadgets.c	libcerf.c	  pm3d.h      term.h
+bitmap.h	  gadgets.h	libcerf.h	  pm3d.o      term.o
+boundary.c	  gadgets.o	libcerf.o	  qt_table.h  time.c
+boundary.h	  genopt.com	linkopt.vms	  qtterminal  time.o
+boundary.o	  getcolor.c	Makefile	  readline.c  unset.c
+breaders.c	  getcolor.h	makefile.all	  readline.h  unset.o
+breaders.h	  getcolor.o	Makefile.am	  readline.o  util3d.c
+breaders.o	  GNUmakefile	makefile.awc	  save.c      util3d.h
+cluster_tags.csv  gnuplot	Makefile.in	  save.h      util3d.o
+color.c		  gnuplot.opt	Makefile.maint	  save.o      util.c
+color.h		  gpexecute.c	marching_cubes.h  scanner.c   util.h
+color.o		  gpexecute.h	matrix.c	  scanner.h   util.o
+command.c	  gp_hist.h	matrix.h	  scanner.o   variable.c
+command.h	  gplt_x11.c	matrix.o	  set.c       variable.h
+command.o	  gplt_x11.h	misc.c		  set.o       variable.o
+contour.c	  gp_time.h	misc.h		  setshow.h   version.c
+contour.h	  gp_types.h	misc.o		  show.c      version.h
+contour.o	  graph3d.c	mouse.c		  show.o      version.o
+datablock.c	  graph3d.h	mousecmn.h	  specfun.c   vms.c
+datablock.h	  graph3d.o	mouse.h		  specfun.h   vms.h
+datablock.o	  graphics.c	mouse.o		  specfun.o   voxelgrid.c
+datafile.c	  graphics.h	multiplot.c	  standard.c  voxelgrid.h
+datafile.h	  graphics.o	multiplot.h	  standard.h  voxelgrid.o
+datafile.o	  help.c	multiplot.o	  standard.o  vplot.c
+dynarray.c	  help.h	national.h	  stats.c     vplot.h
+dynarray.h	  help.o	os2		  stats.h     vplot.o
+dynarray.o	  hidden3d.c	overall.csv	  stats.o     win
+encoding.c	  hidden3d.h	parse.c		  stdfn.c     wxterminal
+encoding.h	  hidden3d.o	parse.h		  stdfn.h     x11.opt
+bash-4.4$ cd 
+bash-4.4$ ls
+a4.txt					     plot.csv
+amazon_reviews_us_Books_v1_02.tsv	     q0.csv
+author_ids.csv				     q1
+authors_and_IDs.csv			     q1.csv
+downloaded_tweets_extend_nolf2.tsv	     q2.csv
+downloaded_tweets_extend_original_nolf2.tsv  retweet_ids1.csv
+gnuplot-5.4.5				     retweet_ids.csv
+IDs.csv					     unmodified_ids.csv
+more_than_three.csv			     users_and_IDs.csv
+bash-4.4$ heawd [K[K[Kd plot.csv
+693 size3
+451 size4
+275 size5
+214 size6
+168 size7
+125 size8
+102 size9
+68 size10
+52 size11
+51 size12
+bash-4.4$ cd gnuplot-5.4.5
+bash-4.4$ cd src
+bash-4.4$ ls
+a4_cluster.png	  encoding.o	history.c	  parse.o     stdfn.o
+alloc.c		  eval.c	history.o	  plot2d.c    strftime.c
+alloc.h		  eval.h	internal.c	  plot2d.h    syscfg.h
+alloc.o		  eval.o	internal.h	  plot2d.o    tables.c
+axis.c		  external.c	internal.o	  plot3d.c    tables.h
+axis.h		  external.h	interpol.c	  plot3d.h    tables.o
+axis.o		  external.o	interpol.h	  plot3d.o    tabulate.c
+beos		  fit.c		interpol.o	  plot.c      tabulate.h
+bf_test		  fit.h		jitter.c	  plot.h      tabulate.o
+bf_test.c	  fit.o		jitter.h	  plot.o      term_api.h
+bf_test.o	  for_hash.csv	jitter.o	  pm3d.c      term.c
+bitmap.c	  gadgets.c	libcerf.c	  pm3d.h      term.h
+bitmap.h	  gadgets.h	libcerf.h	  pm3d.o      term.o
+boundary.c	  gadgets.o	libcerf.o	  qt_table.h  time.c
+boundary.h	  genopt.com	linkopt.vms	  qtterminal  time.o
+boundary.o	  getcolor.c	Makefile	  readline.c  unset.c
+breaders.c	  getcolor.h	makefile.all	  readline.h  unset.o
+breaders.h	  getcolor.o	Makefile.am	  readline.o  util3d.c
+breaders.o	  GNUmakefile	makefile.awc	  save.c      util3d.h
+cluster_tags.csv  gnuplot	Makefile.in	  save.h      util3d.o
+color.c		  gnuplot.opt	Makefile.maint	  save.o      util.c
+color.h		  gpexecute.c	marching_cubes.h  scanner.c   util.h
+color.o		  gpexecute.h	matrix.c	  scanner.h   util.o
+command.c	  gp_hist.h	matrix.h	  scanner.o   variable.c
+command.h	  gplt_x11.c	matrix.o	  set.c       variable.h
+command.o	  gplt_x11.h	misc.c		  set.o       variable.o
+contour.c	  gp_time.h	misc.h		  setshow.h   version.c
+contour.h	  gp_types.h	misc.o		  show.c      version.h
+contour.o	  graph3d.c	mouse.c		  show.o      version.o
+datablock.c	  graph3d.h	mousecmn.h	  specfun.c   vms.c
+datablock.h	  graph3d.o	mouse.h		  specfun.h   vms.h
+datablock.o	  graphics.c	mouse.o		  specfun.o   voxelgrid.c
+datafile.c	  graphics.h	multiplot.c	  standard.c  voxelgrid.h
+datafile.h	  graphics.o	multiplot.h	  standard.h  voxelgrid.o
+datafile.o	  help.c	multiplot.o	  standard.o  vplot.c
+dynarray.c	  help.h	national.h	  stats.c     vplot.h
+dynarray.h	  help.o	os2		  stats.h     vplot.o
+dynarray.o	  hidden3d.c	overall.csv	  stats.o     win
+encoding.c	  hidden3d.h	parse.c		  stdfn.c     wxterminal
+encoding.h	  hidden3d.o	parse.h		  stdfn.h     x11.opt
+bash-4.4$ rm a4_cluster.png
+bash-4.4$ l[K./gnuplot
+
+	G N U P L O T
+	Version 5.4 patchlevel 5    last modified 2022-09-28 
+
+	Copyright (C) 1986-1993, 1998, 2004, 2007-2022
+	Thomas Williams, Colin Kelley and many others
+
+	gnuplot home:     http://www.gnuplot.info
+	faq, bugs, etc:   type "help FAQ"
+	immediate help:   type "help"  (plot window: hit 'h')
+
+Terminal type is now 'unknown'
+gnuplot> set terminal svg size 1200, 700
+
+Terminal type is now 'svg'
+Options are 'size 1200,700 fixed enhanced font 'Arial,12' butt dashlength 1.0 '
+gnuplot> set output 'a4_cluster.png'
+gnuplot> set style data histogram
+gnuplot> set xtics rotate
+gnuplot> plot '/home/jessie/plot.csv’ using 1:xtic(2) title 'Values by sizes' using 1:xtic(2) title 'Values by sizes'  ' using 1:xtic(2) title 'Values by sizes'  
+gnuplot> exit
+bash-4.4$ cd
+--------------------------------------------------------
+4) ausvotes, Covid19, DailyCovidUpdate, JusticeMatters, UPDATE 
+bash-4.4$ fgrep -f retweet_ids1.csv downloaded_tweets_extend_original_nolf2.tsv || awk 'BEGIN { FS = "\t" } ; { print $2 }' | sort | uniq -c | awk '{ print $1, $22}' | sort -g  | awk '{if ($1 >= 3) { print "\t"$2"\t"} } '> for_hash.csv
+bash-4.4$ fgrep -f for_hash.csv downloaded_tweets_extend_original_nolf2.tsv | awkk 'BEGIN { FS = "\t" } ; { print $4 }' | sort | uniq -c | sort -k 1n | tail -n 300 | awk '{print $2}' | sort > cluster_tags.csv
+bash-4.4$ awk  'BEGIN { FS = "\t" } ; { print $4 }' downloaded_tweets_extend_origginal_nolf2.tsv | sort | uniq -c | sort -k 1n | tail -n 30 | awk '{print $2}' | ssort > overall.csv
+bash-4.4$ vimdiff overall.csv cluster_tags.csv
+2 files to edit
+[?2004h[?1049h[22;0;0t[?1h=[?2004h[1;24r[?12h[?12l[27m[23m[29m[m[H[2J[?25l[24;1H"overall.csv" 30L, 353C"cluster_tags.csv"[24;20H[K[24;20H30L, 360C[?2004l[?2004h[?2004l[?2004h[?2004l[?2004h[?2004h[?2004l[?2004h[?2004l[?2004h[?2004h[2;1H▽[6n[2;1H  [1;1H[>c]10;?]11;?[1;1H[34m[48;5;248m  [mableg[33C[7m|[m
+[34m[48;5;248m  [mauspol[32C[7m|[m
+[34m[48;5;248m  [m[94m[48;5;159m--------------------------------------[m[7m|[m
+[34m[48;5;248m  [mbcpoli[32C[7m|[m
+[34m[48;5;248m  [mBREAKING[30C[7m|[m
+[34m[48;5;248m  [mBrexit[32C[7m|[m
+[34m[48;5;248m  [mcdnpoli[31C[7m|[m
+[34m[48;5;248m  [mChefsForUkraine[23C[7m|[m
+[34m[48;5;248m  [mCOVID[33C[7m|[m
+[34m[48;5;248m  [m[94m[48;5;159m--------------------------------------[m[7m|[m
+[34m[48;5;248m  [mCOVID19[31C[7m|[m
+[34m[48;5;248m  [mCOVIDisAirborne[23C[7m|[m
+[34m[48;5;248m  [m[1m[101mCovidIsNotOver[m[48;5;225m                        [m[7m|[m
+[34m[48;5;248m  [mDemVoice1[29C[7m|[m
+[34m[48;5;248m  [m[1m[101minsid[m[48;5;225mers                              [m[7m|[m
+[34m[48;5;248m  [mKyiv[34C[7m|[m
+[34m[48;5;248m  [m[48;5;224mlongcovid                             [m[7m|[m
+[34m[48;5;248m  [mLongCovid[29C[7m|[m
+[34m[48;5;248m  [mMariupol[30C[7m|[m
+[34m[48;5;248m  [mOmicron[31C[7m|[m
+[34m[48;5;248m  [mOneOfUsAllOfUs[24C[7m|[m
+[34m[48;5;248m  [monpoli[32C[7m|[m
+[1m[7moverall.csv           1,1            Top [m[1;42H[34m[48;5;248m  [mableg[2;42H[34m[48;5;248m  [mauspol[3;42H[34m[48;5;248m  [m[48;5;224mausvotes                             [m[4;42H[34m[48;5;248m  [mbcpoli[5;42H[34m[48;5;248m  [mBREAKING[6;42H[34m[48;5;248m  [mBrexit[7;42H[34m[48;5;248m  [mcdnpoli[8;42H[34m[48;5;248m  [mChefsForUkraine[9;42H[34m[48;5;248m  [mCOVID[10;42H[34m[48;5;248m  [m[48;5;224mCovid19                              [m[11;42H[34m[48;5;248m  [mCOVID19[12;42H[34m[48;5;248m  [mCOVIDisAirborne[13;42H[34m[48;5;248m  [m[1m[101mDailyCovidUpdate[m[48;5;225m                     [m[14;42H[34m[48;5;248m  [mDemVoice1[15;42H[34m[48;5;248m  [m[1m[101mJusticeMatt[m[48;5;225mers                       [m[16;42H[34m[48;5;248m  [mKyiv[17;42H[34m[48;5;248m  [m[94m[48;5;159m-------------------------------------[m[18;42H[34m[48;5;248m  [mLongCovid[19;42H[34m[48;5;248m  [mMariupol[20;42H[34m[48;5;248m  [mOmicron[21;42H[34m[48;5;248m  [mOneOfUsAllOfUs[22;42H[34m[48;5;248m  [monpoli[23;42H[7mcluster_tags.csv     1,1            Top[1;3H[?25h[?25l[m[24;70H~@k[1;3H[24;70H   [2;3H[23;63H[7m2[m[23;23H[1m[7m2,[2;3H[?25h[?25l[m[24;70H~@k[2;3H[24;70H   [4;3H[23;63H[7m4[m[23;23H[1m[7m3,[4;3H[?25h[?25l[m[24;70H~@k[4;3H[24;70H   [5;3H[23;63H[7m5[m[23;23H[1m[7m4,[5;3H[?25h[?25l[m[24;70H~@k[5;3H[24;70H   [6;3H[23;63H[7m6[m[23;23H[1m[7m5,[6;3H[?25h[?25l[m[24;70H~@k[6;3H[24;70H   [7;3H[23;63H[7m7[m[23;23H[1m[7m6,[7;3H[?25h[?25l[m[24;70H~@k[7;3H[24;70H   [8;3H[23;63H[7m8[m[23;23H[1m[7m7,[8;3H[?25h[?25l[m[24;70H~@k[8;3H[24;70H   [9;3H[23;63H[7m9[m[23;23H[1m[7m8,[9;3H[?25h[?25l[m[24;70H~@k[9;3H[24;70H   [11;3H[23;63H[7m11,1[m[23;23H[1m[7m9,[11;3H[?25h[?25l[m[24;70H~@k[11;3H[24;70H   [12;3H[23;64H[7m2[m[23;23H[1m[7m10,1[12;3H[?25h[?25l[m[24;70H~@k[12;3H[24;70H   [13;3H[23;64H[7m3[m[23;24H[1m[7m1,[13;3H[?25h[?25l[m[23;64H[7m4[m[23;24H[1m[7m2,[14;3H[?25h[?25l[m[24;70H~@k[14;3H[24;70H   [15;3H[23;64H[7m5[m[23;24H[1m[7m3,[15;3H[?25h[?25l[m[24;70H~@k[15;3H[24;70H   [16;3H[23;64H[7m6[m[23;24H[1m[7m4,[16;3H[?25h[?25l[m[24;70H~@k[16;3H[24;70H   [17;3H[23;64H[7m7[m[23;24H[1m[7m5,[17;3H[?25h[?25l[m[24;70H~@k[17;3H[24;70H   [17;3H[1;1H[34m[48;5;248m  [mauspol                                
+[34m[48;5;248m  [m[94m[48;5;159m--------------------------------------[m
+[34m[48;5;248m  [mbcpoli                                
+[34m[48;5;248m  [mBREAKING                              
+[34m[48;5;248m  [mBrexit                                
+[34m[48;5;248m  [mcdnpoli                               
+[34m[48;5;248m  [mChefsForUkraine                       
+[34m[48;5;248m  [mCOVID                                 
+[34m[48;5;248m  [m[94m[48;5;159m--------------------------------------[m
+[34m[48;5;248m  [mCOVID19                               
+[34m[48;5;248m  [mCOVIDisAirborne                       
+[34m[48;5;248m  [m[1m[101mCovidIsNotOver[m[48;5;225m                        [m
+[34m[48;5;248m  [mDemVoice1                             
+[34m[48;5;248m  [m[1m[101minsid[m[48;5;225mers                              [m
+[34m[48;5;248m  [mKyiv                                  
+[34m[48;5;248m  [m[48;5;224mlongcovid                             [m
+[34m[48;5;248m  [mLongCovid                             
+[34m[48;5;248m  [mMariupol                              
+[34m[48;5;248m  [mOmicron                               
+[34m[48;5;248m  [mOneOfUsAllOfUs                        
+[34m[48;5;248m  [monpoli                                
+                                        [34m[48;5;248m  [m[48;5;224mPartygate                             [m[1;42H[34m[48;5;248m  [mauspol                               [2;42H[34m[48;5;248m  [m[48;5;224mausvotes                             [m[3;42H[34m[48;5;248m  [mbcpoli                               [4;42H[34m[48;5;248m  [mBREAKING                             [5;42H[34m[48;5;248m  [mBrexit                               [6;42H[34m[48;5;248m  [mcdnpoli                              [7;42H[34m[48;5;248m  [mChefsForUkraine                      [8;42H[34m[48;5;248m  [mCOVID                                [9;42H[34m[48;5;248m  [m[48;5;224mCovid19                              [m[10;42H[34m[48;5;248m  [mCOVID19                              [11;42H[34m[48;5;248m  [mCOVIDisAirborne                      [12;42H[34m[48;5;248m  [m[1m[101mDailyCovidUpdate[m[48;5;225m                     [m[13;42H[34m[48;5;248m  [mDemVoice1                            [14;42H[34m[48;5;248m  [m[1m[101mJusticeMatt[m[48;5;225mers                       [m[15;42H[34m[48;5;248m  [mKyiv                                 [16;42H[34m[48;5;248m  [m[94m[48;5;159m-------------------------------------[m[17;42H[34m[48;5;248m  [mLongCovid                            [18;42H[34m[48;5;248m  [mMariupol                             [19;42H[34m[48;5;248m  [mOmicron                              [20;42H[34m[48;5;248m  [mOneOfUsAllOfUs                       [21;42H[34m[48;5;248m  [monpoli                               [22;42H                                       [22;42H[34m[48;5;248m  [m[94m[48;5;159m-------------------------------------[m[23;78H[7m10%[m[24;1H[K[23;24H[1m[7m6,[12C10% [17;3H[?25h[?25l[m[24;70H~@k[17;3H[24;70H   [17;3H[1;1H[34m[48;5;248m  [m[94m[48;5;159m--------------------------------------[m
+[34m[48;5;248m  [mbcpoli                                
+[34m[48;5;248m  [mBREAKING                              
+[34m[48;5;248m  [mBrexit                                
+[34m[48;5;248m  [mcdnpoli                               
+[34m[48;5;248m  [mChefsForUkraine                       
+[34m[48;5;248m  [mCOVID                                 
+[34m[48;5;248m  [m[94m[48;5;159m--------------------------------------[m
+[34m[48;5;248m  [mCOVID19                               
+[34m[48;5;248m  [mCOVIDisAirborne                       
+[34m[48;5;248m  [m[1m[101mCovidIsNotOver[m[48;5;225m                        [m
+[34m[48;5;248m  [mDemVoice1                             
+[34m[48;5;248m  [m[1m[101minsid[m[48;5;225mers                              [m
+[34m[48;5;248m  [mKyiv                                  
+[34m[48;5;248m  [m[48;5;224mlongcovid                             [m
+[34m[48;5;248m  [mLongCovid                             
+[34m[48;5;248m  [mMariupol                              
+[34m[48;5;248m  [mOmicron                               
+[34m[48;5;248m  [mOneOfUsAllOfUs                        
+[34m[48;5;248m  [monpoli                                
+[34m[48;5;248m  [m[48;5;224mPartygate                             [m
+                                        [34m[48;5;248m  [mPMQs[1;42H[34m[48;5;248m  [m[48;5;224mausvotes                             [m[2;42H[34m[48;5;248m  [mbcpoli                               [3;42H[34m[48;5;248m  [mBREAKING                             [4;42H[34m[48;5;248m  [mBrexit                               [5;42H[34m[48;5;248m  [mcdnpoli                              [6;42H[34m[48;5;248m  [mChefsForUkraine                      [7;42H[34m[48;5;248m  [mCOVID                                [8;42H[34m[48;5;248m  [m[48;5;224mCovid19                              [m[9;42H[34m[48;5;248m  [mCOVID19                              [10;42H[34m[48;5;248m  [mCOVIDisAirborne                      [11;42H[34m[48;5;248m  [m[1m[101mDailyCovidUpdate[m[48;5;225m                     [m[12;42H[34m[48;5;248m  [mDemVoice1                            [13;42H[34m[48;5;248m  [m[1m[101mJusticeMatt[m[48;5;225mers                       [m[14;42H[34m[48;5;248m  [mKyiv                                 [15;42H[34m[48;5;248m  [m[94m[48;5;159m-------------------------------------[m[16;42H[34m[48;5;248m  [mLongCovid                            [17;42H[34m[48;5;248m  [mMariupol                             [18;42H[34m[48;5;248m  [mOmicron                              [19;42H[34m[48;5;248m  [mOneOfUsAllOfUs                       [20;42H[34m[48;5;248m  [monpoli                               [21;42H[34m[48;5;248m  [m[94m[48;5;159m-------------------------------------[m[22;42H                                       [22;42H[34m[48;5;248m  [mPMQs[23;64H[7m8[13C2[m[23;24H[1m[7m7,[12C20[17;3H[?25h[?25l[m[24;70H~@k[17;3H[24;70H   [17;3H[1;1H[34m[48;5;248m  [mbcpoli                                
+[34m[48;5;248m  [mBREAKING                              
+[34m[48;5;248m  [mBrexit                                
+[34m[48;5;248m  [mcdnpoli                               
+[34m[48;5;248m  [mChefsForUkraine                       
+[34m[48;5;248m  [mCOVID                                 
+[34m[48;5;248m  [m[94m[48;5;159m--------------------------------------[m
+[34m[48;5;248m  [mCOVID19                               
+[34m[48;5;248m  [mCOVIDisAirborne                       
+[34m[48;5;248m  [m[1m[101mCovidIsNotOver[m[48;5;225m                        [m
+[34m[48;5;248m  [mDemVoice1                             
+[34m[48;5;248m  [m[1m[101minsid[m[48;5;225mers                              [m
+[34m[48;5;248m  [mKyiv                                  
+[34m[48;5;248m  [m[48;5;224mlongcovid                             [m
+[34m[48;5;248m  [mLongCovid                             
+[34m[48;5;248m  [mMariupol                              
+[34m[48;5;248m  [mOmicron                               
+[34m[48;5;248m  [mOneOfUsAllOfUs                        
+[34m[48;5;248m  [monpoli                                
+[34m[48;5;248m  [m[48;5;224mPartygate                             [m
+[34m[48;5;248m  [mPMQs                                  
+                                        [34m[48;5;248m  [mRepublicanTTTTTTPredators[1;42H[34m[48;5;248m  [mbcpoli                               [2;42H[34m[48;5;248m  [mBREAKING                             [3;42H[34m[48;5;248m  [mBrexit                               [4;42H[34m[48;5;248m  [mcdnpoli                              [5;42H[34m[48;5;248m  [mChefsForUkraine                      [6;42H[34m[48;5;248m  [mCOVID                                [7;42H[34m[48;5;248m  [m[48;5;224mCovid19                              [m[8;42H[34m[48;5;248m  [mCOVID19                              [9;42H[34m[48;5;248m  [mCOVIDisAirborne                      [10;42H[34m[48;5;248m  [m[1m[101mDailyCovidUpdate[m[48;5;225m                     [m[11;42H[34m[48;5;248m  [mDemVoice1                            [12;42H[34m[48;5;248m  [m[1m[101mJusticeMatt[m[48;5;225mers                       [m[13;42H[34m[48;5;248m  [mKyiv                                 [14;42H[34m[48;5;248m  [m[94m[48;5;159m-------------------------------------[m[15;42H[34m[48;5;248m  [mLongCovid                            [16;42H[34m[48;5;248m  [mMariupol                             [17;42H[34m[48;5;248m  [mOmicron                              [18;42H[34m[48;5;248m  [mOneOfUsAllOfUs                       [19;42H[34m[48;5;248m  [monpoli                               [20;42H[34m[48;5;248m  [m[94m[48;5;159m-------------------------------------[m[21;42H[34m[48;5;248m  [mPMQs                                 [22;42H                                       [22;42H[34m[48;5;248m  [mRepublicanTTTTTTPredators[23;64H[7m9[13C3[m[23;24H[1m[7m8,[12C30[17;3H[?25h[?25l[m[24;70H~@k[17;3H[24;70H   [17;3H[1;1H[34m[48;5;248m  [mBREAKING                              
+[34m[48;5;248m  [mBrexit                                
+[34m[48;5;248m  [mcdnpoli                               
+[34m[48;5;248m  [mChefsForUkraine                       
+[34m[48;5;248m  [mCOVID                                 
+[34m[48;5;248m  [m[94m[48;5;159m--------------------------------------[m
+[34m[48;5;248m  [mCOVID19                               
+[34m[48;5;248m  [mCOVIDisAirborne                       
+[34m[48;5;248m  [m[1m[101mCovidIsNotOver[m[48;5;225m                        [m
+[34m[48;5;248m  [mDemVoice1                             
+[34m[48;5;248m  [m[1m[101minsid[m[48;5;225mers                              [m
+[34m[48;5;248m  [mKyiv                                  
+[34m[48;5;248m  [m[48;5;224mlongcovid                             [m
+[34m[48;5;248m  [mLongCovid                             
+[34m[48;5;248m  [mMariupol                              
+[34m[48;5;248m  [mOmicron                               
+[34m[48;5;248m  [mOneOfUsAllOfUs                        
+[34m[48;5;248m  [monpoli                                
+[34m[48;5;248m  [m[48;5;224mPartygate                             [m
+[34m[48;5;248m  [mPMQs                                  
+[34m[48;5;248m  [mRepublicanTTTTTTPredators             
+                                        [34m[48;5;248m  [mRussia[1;42H[34m[48;5;248m  [mBREAKING                             [2;42H[34m[48;5;248m  [mBrexit                               [3;42H[34m[48;5;248m  [mcdnpoli                              [4;42H[34m[48;5;248m  [mChefsForUkraine                      [5;42H[34m[48;5;248m  [mCOVID                                [6;42H[34m[48;5;248m  [m[48;5;224mCovid19                              [m[7;42H[34m[48;5;248m  [mCOVID19                              [8;42H[34m[48;5;248m  [mCOVIDisAirborne                      [9;42H[34m[48;5;248m  [m[1m[101mDailyCovidUpdate[m[48;5;225m                     [m[10;42H[34m[48;5;248m  [mDemVoice1                            [11;42H[34m[48;5;248m  [m[1m[101mJusticeMatt[m[48;5;225mers                       [m[12;42H[34m[48;5;248m  [mKyiv                                 [13;42H[34m[48;5;248m  [m[94m[48;5;159m-------------------------------------[m[14;42H[34m[48;5;248m  [mLongCovid                            [15;42H[34m[48;5;248m  [mMariupol                             [16;42H[34m[48;5;248m  [mOmicron                              [17;42H[34m[48;5;248m  [mOneOfUsAllOfUs                       [18;42H[34m[48;5;248m  [monpoli                               [19;42H[34m[48;5;248m  [m[94m[48;5;159m-------------------------------------[m[20;42H[34m[48;5;248m  [mPMQs                                 [21;42H[34m[48;5;248m  [mRepublicanTTTTTTPredators            [22;42H                                       [22;42H[34m[48;5;248m  [mRussia[23;63H[7m20[13C4[m[23;24H[1m[7m9,[13C3%[17;3H[?25h[?25l[m[24;70H~@k[17;3H[24;70H   [17;3H[1;1H[34m[48;5;248m  [mBrexit                                
+[34m[48;5;248m  [mcdnpoli                               
+[34m[48;5;248m  [mChefsForUkraine                       
+[34m[48;5;248m  [mCOVID                                 
+[34m[48;5;248m  [m[94m[48;5;159m--------------------------------------[m
+[34m[48;5;248m  [mCOVID19                               
+[34m[48;5;248m  [mCOVIDisAirborne                       
+[34m[48;5;248m  [m[1m[101mCovidIsNotOver[m[48;5;225m                        [m
+[34m[48;5;248m  [mDemVoice1                             
+[34m[48;5;248m  [m[1m[101minsid[m[48;5;225mers                              [m
+[34m[48;5;248m  [mKyiv                                  
+[34m[48;5;248m  [m[48;5;224mlongcovid                             [m
+[34m[48;5;248m  [mLongCovid                             
+[34m[48;5;248m  [mMariupol                              
+[34m[48;5;248m  [mOmicron                               
+[34m[48;5;248m  [mOneOfUsAllOfUs                        
+[34m[48;5;248m  [monpoli                                
+[34m[48;5;248m  [m[48;5;224mPartygate                             [m
+[34m[48;5;248m  [mPMQs                                  
+[34m[48;5;248m  [mRepublicanTTTTTTPredators             
+[34m[48;5;248m  [mRussia                                
+                                        [34m[48;5;248m  [m"Russia,Ukraine"[1;42H[34m[48;5;248m  [mBrexit                               [2;42H[34m[48;5;248m  [mcdnpoli                              [3;42H[34m[48;5;248m  [mChefsForUkraine                      [4;42H[34m[48;5;248m  [mCOVID                                [5;42H[34m[48;5;248m  [m[48;5;224mCovid19                              [m[6;42H[34m[48;5;248m  [mCOVID19                              [7;42H[34m[48;5;248m  [mCOVIDisAirborne                      [8;42H[34m[48;5;248m  [m[1m[101mDailyCovidUpdate[m[48;5;225m                     [m[9;42H[34m[48;5;248m  [mDemVoice1                            [10;42H[34m[48;5;248m  [m[1m[101mJusticeMatt[m[48;5;225mers                       [m[11;42H[34m[48;5;248m  [mKyiv                                 [12;42H[34m[48;5;248m  [m[94m[48;5;159m-------------------------------------[m[13;42H[34m[48;5;248m  [mLongCovid                            [14;42H[34m[48;5;248m  [mMariupol                             [15;42H[34m[48;5;248m  [mOmicron                              [16;42H[34m[48;5;248m  [mOneOfUsAllOfUs                       [17;42H[34m[48;5;248m  [monpoli                               [18;42H[34m[48;5;248m  [m[94m[48;5;159m-------------------------------------[m[19;42H[34m[48;5;248m  [mPMQs                                 [20;42H[34m[48;5;248m  [mRepublicanTTTTTTPredators            [21;42H[34m[48;5;248m  [mRussia                               [22;42H                                       [22;42H[34m[48;5;248m  [m"Russia,Ukraine"[23;64H[7m1[13C5[m[23;23H[1m[7m20,[12C44%[17;3H[?25h[?25l[m[24;70H~@k[17;3H[24;70H   [17;3H[1;1H[34m[48;5;248m  [mcdnpoli                               
+[34m[48;5;248m  [mChefsForUkraine                       
+[34m[48;5;248m  [mCOVID                                 
+[34m[48;5;248m  [m[94m[48;5;159m--------------------------------------[m
+[34m[48;5;248m  [mCOVID19                               
+[34m[48;5;248m  [mCOVIDisAirborne                       
+[34m[48;5;248m  [m[1m[101mCovidIsNotOver[m[48;5;225m                        [m
+[34m[48;5;248m  [mDemVoice1                             
+[34m[48;5;248m  [m[1m[101minsid[m[48;5;225mers                              [m
+[34m[48;5;248m  [mKyiv                                  
+[34m[48;5;248m  [m[48;5;224mlongcovid                             [m
+[34m[48;5;248m  [mLongCovid                             
+[34m[48;5;248m  [mMariupol                              
+[34m[48;5;248m  [mOmicron                               
+[34m[48;5;248m  [mOneOfUsAllOfUs                        
+[34m[48;5;248m  [monpoli                                
+[34m[48;5;248m  [m[48;5;224mPartygate                             [m
+[34m[48;5;248m  [mPMQs                                  
+[34m[48;5;248m  [mRepublicanTTTTTTPredators             
+[34m[48;5;248m  [mRussia                                
+[34m[48;5;248m  [m"Russia,Ukraine"                      
+                                        [34m[48;5;248m  [m[48;5;224mSOTU                                  [m[1;42H[34m[48;5;248m  [mcdnpoli                              [2;42H[34m[48;5;248m  [mChefsForUkraine                      [3;42H[34m[48;5;248m  [mCOVID                                [4;42H[34m[48;5;248m  [m[48;5;224mCovid19                              [m[5;42H[34m[48;5;248m  [mCOVID19                              [6;42H[34m[48;5;248m  [mCOVIDisAirborne                      [7;42H[34m[48;5;248m  [m[1m[101mDailyCovidUpdate[m[48;5;225m                     [m[8;42H[34m[48;5;248m  [mDemVoice1                            [9;42H[34m[48;5;248m  [m[1m[101mJusticeMatt[m[48;5;225mers                       [m[10;42H[34m[48;5;248m  [mKyiv                                 [11;42H[34m[48;5;248m  [m[94m[48;5;159m-------------------------------------[m[12;42H[34m[48;5;248m  [mLongCovid                            [13;42H[34m[48;5;248m  [mMariupol                             [14;42H[34m[48;5;248m  [mOmicron                              [15;42H[34m[48;5;248m  [mOneOfUsAllOfUs                       [16;42H[34m[48;5;248m  [monpoli                               [17;42H[34m[48;5;248m  [m[94m[48;5;159m-------------------------------------[m[18;42H[34m[48;5;248m  [mPMQs                                 [19;42H[34m[48;5;248m  [mRepublicanTTTTTTPredators            [20;42H[34m[48;5;248m  [mRussia                               [21;42H[34m[48;5;248m  [m"Russia,Ukraine"                     [22;42H                                       [22;42H[34m[48;5;248m  [m[94m[48;5;159m-------------------------------------[m[23;64H[7m2[14C4[m[23;24H[1m[7m1,[12C55%[17;3H[?25h[?25l[m[24;70H~@k[17;3H[24;70H   [17;3H[1;1H[34m[48;5;248m  [mChefsForUkraine                       
+[34m[48;5;248m  [mCOVID                                 
+[34m[48;5;248m  [m[94m[48;5;159m--------------------------------------[m
+[34m[48;5;248m  [mCOVID19                               
+[34m[48;5;248m  [mCOVIDisAirborne                       
+[34m[48;5;248m  [m[1m[101mCovidIsNotOver[m[48;5;225m                        [m
+[34m[48;5;248m  [mDemVoice1                             
+[34m[48;5;248m  [m[1m[101minsid[m[48;5;225mers                              [m
+[34m[48;5;248m  [mKyiv                                  
+[34m[48;5;248m  [m[48;5;224mlongcovid                             [m
+[34m[48;5;248m  [mLongCovid                             
+[34m[48;5;248m  [mMariupol                              
+[34m[48;5;248m  [mOmicron                               
+[34m[48;5;248m  [mOneOfUsAllOfUs                        
+[34m[48;5;248m  [monpoli                                
+[34m[48;5;248m  [m[48;5;224mPartygate                             [m
+[34m[48;5;248m  [mPMQs                                  
+[34m[48;5;248m  [mRepublicanTTTTTTPredators             
+[34m[48;5;248m  [mRussia                                
+[34m[48;5;248m  [m"Russia,Ukraine"                      
+[34m[48;5;248m  [m[48;5;224mSOTU                                  [m
+                                        [34m[48;5;248m  [mStandWithUkraine[1;42H[34m[48;5;248m  [mChefsForUkraine                      [2;42H[34m[48;5;248m  [mCOVID                                [3;42H[34m[48;5;248m  [m[48;5;224mCovid19                              [m[4;42H[34m[48;5;248m  [mCOVID19                              [5;42H[34m[48;5;248m  [mCOVIDisAirborne                      [6;42H[34m[48;5;248m  [m[1m[101mDailyCovidUpdate[m[48;5;225m                     [m[7;42H[34m[48;5;248m  [mDemVoice1                            [8;42H[34m[48;5;248m  [m[1m[101mJusticeMatt[m[48;5;225mers                       [m[9;42H[34m[48;5;248m  [mKyiv                                 [10;42H[34m[48;5;248m  [m[94m[48;5;159m-------------------------------------[m[11;42H[34m[48;5;248m  [mLongCovid                            [12;42H[34m[48;5;248m  [mMariupol                             [13;42H[34m[48;5;248m  [mOmicron                              [14;42H[34m[48;5;248m  [mOneOfUsAllOfUs                       [15;42H[34m[48;5;248m  [monpoli                               [16;42H[34m[48;5;248m  [m[94m[48;5;159m-------------------------------------[m[17;42H[34m[48;5;248m  [mPMQs                                 [18;42H[34m[48;5;248m  [mRepublicanTTTTTTPredators            [19;42H[34m[48;5;248m  [mRussia                               [20;42H[34m[48;5;248m  [m"Russia,Ukraine"                     [21;42H[34m[48;5;248m  [m[94m[48;5;159m-------------------------------------[m[22;42H                                       [22;42H[34m[48;5;248m  [mStandWithUkraine[23;78H[7m63[m[23;24H[1m[7m2,[12C66%[17;3H[?25h[?25l[m[24;70H~@k[17;3H[24;70H   [17;3H[1;1H[34m[48;5;248m  [mCOVID                                 
+[34m[48;5;248m  [m[94m[48;5;159m--------------------------------------[m
+[34m[48;5;248m  [mCOVID19                               
+[34m[48;5;248m  [mCOVIDisAirborne                       
+[34m[48;5;248m  [m[1m[101mCovidIsNotOver[m[48;5;225m                        [m
+[34m[48;5;248m  [mDemVoice1                             
+[34m[48;5;248m  [m[1m[101minsid[m[48;5;225mers                              [m
+[34m[48;5;248m  [mKyiv                                  
+[34m[48;5;248m  [m[48;5;224mlongcovid                             [m
+[34m[48;5;248m  [mLongCovid                             
+[34m[48;5;248m  [mMariupol                              
+[34m[48;5;248m  [mOmicron                               
+[34m[48;5;248m  [mOneOfUsAllOfUs                        
+[34m[48;5;248m  [monpoli                                
+[34m[48;5;248m  [m[48;5;224mPartygate                             [m
+[34m[48;5;248m  [mPMQs                                  
+[34m[48;5;248m  [mRepublicanTTTTTTPredators             
+[34m[48;5;248m  [mRussia                                
+[34m[48;5;248m  [m"Russia,Ukraine"                      
+[34m[48;5;248m  [m[48;5;224mSOTU                                  [m
+[34m[48;5;248m  [mStandWithUkraine                      
+                                        [34m[48;5;248m  [mUkraine[1;42H[34m[48;5;248m  [mCOVID                                [2;42H[34m[48;5;248m  [m[48;5;224mCovid19                              [m[3;42H[34m[48;5;248m  [mCOVID19                              [4;42H[34m[48;5;248m  [mCOVIDisAirborne                      [5;42H[34m[48;5;248m  [m[1m[101mDailyCovidUpdate[m[48;5;225m                     [m[6;42H[34m[48;5;248m  [mDemVoice1                            [7;42H[34m[48;5;248m  [m[1m[101mJusticeMatt[m[48;5;225mers                       [m[8;42H[34m[48;5;248m  [mKyiv                                 [9;42H[34m[48;5;248m  [m[94m[48;5;159m-------------------------------------[m[10;42H[34m[48;5;248m  [mLongCovid                            [11;42H[34m[48;5;248m  [mMariupol                             [12;42H[34m[48;5;248m  [mOmicron                              [13;42H[34m[48;5;248m  [mOneOfUsAllOfUs                       [14;42H[34m[48;5;248m  [monpoli                               [15;42H[34m[48;5;248m  [m[94m[48;5;159m-------------------------------------[m[16;42H[34m[48;5;248m  [mPMQs                                 [17;42H[34m[48;5;248m  [mRepublicanTTTTTTPredators            [18;42H[34m[48;5;248m  [mRussia                               [19;42H[34m[48;5;248m  [m"Russia,Ukraine"                     [20;42H[34m[48;5;248m  [m[94m[48;5;159m-------------------------------------[m[21;42H[34m[48;5;248m  [mStandWithUkraine                     [22;42H                                       [22;42H[34m[48;5;248m  [mUkraine[23;64H[7m3[13C72[m[23;24H[1m[7m3,[12C77%[17;3H[?25h[?25l[m[24;70H~@k[17;3H[24;70H   [17;3H[1;1H[34m[48;5;248m  [m[94m[48;5;159m--------------------------------------[m
+[34m[48;5;248m  [mCOVID19                               
+[34m[48;5;248m  [mCOVIDisAirborne                       
+[34m[48;5;248m  [m[1m[101mCovidIsNotOver[m[48;5;225m                        [m
+[34m[48;5;248m  [mDemVoice1                             
+[34m[48;5;248m  [m[1m[101minsid[m[48;5;225mers                              [m
+[34m[48;5;248m  [mKyiv                                  
+[34m[48;5;248m  [m[48;5;224mlongcovid                             [m
+[34m[48;5;248m  [mLongCovid                             
+[34m[48;5;248m  [mMariupol                              
+[34m[48;5;248m  [mOmicron                               
+[34m[48;5;248m  [mOneOfUsAllOfUs                        
+[34m[48;5;248m  [monpoli                                
+[34m[48;5;248m  [m[48;5;224mPartygate                             [m
+[34m[48;5;248m  [mPMQs                                  
+[34m[48;5;248m  [mRepublicanTTTTTTPredators             
+[34m[48;5;248m  [mRussia                                
+[34m[48;5;248m  [m"Russia,Ukraine"                      
+[34m[48;5;248m  [m[48;5;224mSOTU                                  [m
+[34m[48;5;248m  [mStandWithUkraine                      
+[34m[48;5;248m  [mUkraine                               
+                                        [34m[48;5;248m  [m"Ukraine,Russia"[1;42H[34m[48;5;248m  [m[48;5;224mCovid19                              [m[2;42H[34m[48;5;248m  [mCOVID19                              [3;42H[34m[48;5;248m  [mCOVIDisAirborne                      [4;42H[34m[48;5;248m  [m[1m[101mDailyCovidUpdate[m[48;5;225m                     [m[5;42H[34m[48;5;248m  [mDemVoice1                            [6;42H[34m[48;5;248m  [m[1m[101mJusticeMatt[m[48;5;225mers                       [m[7;42H[34m[48;5;248m  [mKyiv                                 [8;42H[34m[48;5;248m  [m[94m[48;5;159m-------------------------------------[m[9;42H[34m[48;5;248m  [mLongCovid                            [10;42H[34m[48;5;248m  [mMariupol                             [11;42H[34m[48;5;248m  [mOmicron                              [12;42H[34m[48;5;248m  [mOneOfUsAllOfUs                       [13;42H[34m[48;5;248m  [monpoli                               [14;42H[34m[48;5;248m  [m[94m[48;5;159m-------------------------------------[m[15;42H[34m[48;5;248m  [mPMQs                                 [16;42H[34m[48;5;248m  [mRepublicanTTTTTTPredators            [17;42H[34m[48;5;248m  [mRussia                               [18;42H[34m[48;5;248m  [m"Russia,Ukraine"                     [19;42H[34m[48;5;248m  [m[94m[48;5;159m-------------------------------------[m[20;42H[34m[48;5;248m  [mStandWithUkraine                     [21;42H[34m[48;5;248m  [mUkraine                              [22;42H                                       [22;42H[34m[48;5;248m  [m"Ukraine,Russia"[23;64H[7m4[13C81[m[23;24H[1m[7m4,[12C88%[17;3H[?25h[?25l[m[24;70H~@k[17;3H[24;70H   [17;3H[1;1H[34m[48;5;248m  [mCOVID19                               
+[34m[48;5;248m  [mCOVIDisAirborne                       
+[34m[48;5;248m  [m[1m[101mCovidIsNotOver[m[48;5;225m                        [m
+[34m[48;5;248m  [mDemVoice1                             
+[34m[48;5;248m  [m[1m[101minsid[m[48;5;225mers                              [m
+[34m[48;5;248m  [mKyiv                                  
+[34m[48;5;248m  [m[48;5;224mlongcovid                             [m
+[34m[48;5;248m  [mLongCovid                             
+[34m[48;5;248m  [mMariupol                              
+[34m[48;5;248m  [mOmicron                               
+[34m[48;5;248m  [mOneOfUsAllOfUs                        
+[34m[48;5;248m  [monpoli                                
+[34m[48;5;248m  [m[48;5;224mPartygate                             [m
+[34m[48;5;248m  [mPMQs                                  
+[34m[48;5;248m  [mRepublicanTTTTTTPredators             
+[34m[48;5;248m  [mRussia                                
+[34m[48;5;248m  [m"Russia,Ukraine"                      
+[34m[48;5;248m  [m[48;5;224mSOTU                                  [m
+[34m[48;5;248m  [mStandWithUkraine                      
+[34m[48;5;248m  [mUkraine                               
+[34m[48;5;248m  [m"Ukraine,Russia"                      
+                                        [34m[48;5;248m  [m[94m[48;5;159m--------------------------------------[m[1;42H[34m[48;5;248m  [mCOVID19                              [2;42H[34m[48;5;248m  [mCOVIDisAirborne                      [3;42H[34m[48;5;248m  [m[1m[101mDailyCovidUpdate[m[48;5;225m                     [m[4;42H[34m[48;5;248m  [mDemVoice1                            [5;42H[34m[48;5;248m  [m[1m[101mJusticeMatt[m[48;5;225mers                       [m[6;42H[34m[48;5;248m  [mKyiv                                 [7;42H[34m[48;5;248m  [m[94m[48;5;159m-------------------------------------[m[8;42H[34m[48;5;248m  [mLongCovid                            [9;42H[34m[48;5;248m  [mMariupol                             [10;42H[34m[48;5;248m  [mOmicron                              [11;42H[34m[48;5;248m  [mOneOfUsAllOfUs                       [12;42H[34m[48;5;248m  [monpoli                               [13;42H[34m[48;5;248m  [m[94m[48;5;159m-------------------------------------[m[14;42H[34m[48;5;248m  [mPMQs                                 [15;42H[34m[48;5;248m  [mRepublicanTTTTTTPredators            [16;42H[34m[48;5;248m  [mRussia                               [17;42H[34m[48;5;248m  [m"Russia,Ukraine"                     [18;42H[34m[48;5;248m  [m[94m[48;5;159m-------------------------------------[m[19;42H[34m[48;5;248m  [mStandWithUkraine                     [20;42H[34m[48;5;248m  [mUkraine                              [21;42H[34m[48;5;248m  [m"Ukraine,Russia"                     [22;42H                                       [22;42H[34m[48;5;248m  [m[48;5;224mUPDATE                               [m[23;64H[7m5[13C90[m[23;24H[1m[7m5,[12C90%[17;3H[?25h[?25l[m[24;70H~@k[17;3H[24;70H   [17;3H[1;1H[34m[48;5;248m  [mCOVIDisAirborne                       
+[34m[48;5;248m  [m[1m[101mCovidIsNotOver[m[48;5;225m                        [m
+[34m[48;5;248m  [mDemVoice1                             
+[34m[48;5;248m  [m[1m[101minsid[m[48;5;225mers                              [m
+[34m[48;5;248m  [mKyiv                                  
+[34m[48;5;248m  [m[48;5;224mlongcovid                             [m
+[34m[48;5;248m  [mLongCovid                             
+[34m[48;5;248m  [mMariupol                              
+[34m[48;5;248m  [mOmicron                               
+[34m[48;5;248m  [mOneOfUsAllOfUs                        
+[34m[48;5;248m  [monpoli                                
+[34m[48;5;248m  [m[48;5;224mPartygate                             [m
+[34m[48;5;248m  [mPMQs                                  
+[34m[48;5;248m  [mRepublicanTTTTTTPredators             
+[34m[48;5;248m  [mRussia                                
+[34m[48;5;248m  [m"Russia,Ukraine"                      
+[34m[48;5;248m  [m[48;5;224mSOTU                                  [m
+[34m[48;5;248m  [mStandWithUkraine                      
+[34m[48;5;248m  [mUkraine                               
+[34m[48;5;248m  [m"Ukraine,Russia"                      
+[34m[48;5;248m  [m[94m[48;5;159m--------------------------------------[m
+                                        [34m[48;5;248m  [m"เจ้าแก้มก้อน,fluke_natouch"[1;42H[34m[48;5;248m  [mCOVIDisAirborne                      [2;42H[34m[48;5;248m  [m[1m[101mDailyCovidUpdate[m[48;5;225m                     [m[3;42H[34m[48;5;248m  [mDemVoice1                            [4;42H[34m[48;5;248m  [m[1m[101mJusticeMatt[m[48;5;225mers                       [m[5;42H[34m[48;5;248m  [mKyiv                                 [6;42H[34m[48;5;248m  [m[94m[48;5;159m-------------------------------------[m[7;42H[34m[48;5;248m  [mLongCovid                            [8;42H[34m[48;5;248m  [mMariupol                             [9;42H[34m[48;5;248m  [mOmicron                              [10;42H[34m[48;5;248m  [mOneOfUsAllOfUs                       [11;42H[34m[48;5;248m  [monpoli                               [12;42H[34m[48;5;248m  [m[94m[48;5;159m-------------------------------------[m[13;42H[34m[48;5;248m  [mPMQs                                 [14;42H[34m[48;5;248m  [mRepublicanTTTTTTPredators            [15;42H[34m[48;5;248m  [mRussia                               [16;42H[34m[48;5;248m  [m"Russia,Ukraine"                     [17;42H[34m[48;5;248m  [m[94m[48;5;159m-------------------------------------[m[18;42H[34m[48;5;248m  [mStandWithUkraine                     [19;42H[34m[48;5;248m  [mUkraine                              [20;42H[34m[48;5;248m  [m"Ukraine,Russia"                     [21;42H[34m[48;5;248m  [m[48;5;224mUPDATE                               [m[22;42H                                       [22;42H[34m[48;5;248m  [m"เจ้าแก้มก้อน,fluke_natouch"[23;64H[7m6[13CBot[m[23;24H[1m[7m6,[12CBot [17;3H[?25h[?25l[m[24;70H~@k[17;3H[24;70H   [18;3H[23;24H[1m[7m7,[18;3H[?25h[?25l[m[24;70H~@k[18;3H[24;70H   [19;3H[23;64H[7m7[m[23;24H[1m[7m8,[19;3H[?25h[?25l[m[24;70H~@k[19;3H[24;70H   [20;3H[23;64H[7m8[m[23;24H[1m[7m9,[20;3H[?25h[?25l[m[24;70H~@k[20;3H[24;70H   [22;3H[23;63H[7m30[m[23;23H[1m[7m30,[22;3H[?25h[?25l[m[24;70H:[22;3H[24;70H[K[24;1H:[?2004h[?25hq[?25l[?25ha[?25l[?25h![?25l[?25h[?25l[?2004l[24;1H[K[24;1H[?2004l[?1l>[?25h[?1049l[23;0;0tbash-4.4$ exit
+
+Script done on 2022-10-19 16:29:41-04:00
+--------------------------------------------------------
+6) The network I plotted showed that the thickness of edges represented the weight of the edges, which showed that if there are more duplicated combinations of data (author retweeted same user), the edge would be thicker instead of repeating same edges. And the complexity of the network represented the activeness of the network, which is that when the network was active and engaging, the complexity of the network would increase. 
